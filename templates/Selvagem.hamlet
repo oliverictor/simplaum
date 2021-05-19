@@ -13,7 +13,7 @@
       
     <div #header-content-indice>
         <h1 class="negrito">Quarto Selvagem
-        <p class="texto1">Para você que sempre sonhou em ser o Tarzan
+        <p class="texto1">Para você que sempre sonhou em ser o Tarzan!
     
     <div #header-content-titulo-quarto> 
             <p class="texto1">Ambiente Selvagem
@@ -39,13 +39,13 @@
     <div #header-content-quartos>
         <h1 class="negrito2">Inclusos
         <ul class="texto1">
-            <li>Lona
-            <li>Uma flecha
-            <li>Perdeneira
-            <li>Ampla area de recreação
+            <li>Lona.
+            <li>Uma flecha.
+            <li>Perdeneira.
+            <li>Ampla area de recreação.
             <li>Animais selvagem próximos, não faça barulho, sério.
-            <li>Frutas Silvestres, por ai....
-            <li>Treinamento com Arco e Flecha com o sósia do Rambo!!
+            <li>Frutas Silvestres, por ai...
+            <li>Treinamento com Arco e Flecha com o sósia do Rambo!!!
     
     <div #link-content>
         <a href=@{IndochinaR}>Visitar outro quarto

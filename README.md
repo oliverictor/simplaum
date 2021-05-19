@@ -1,4 +1,3 @@
-# agendamentoHaskell
-Projeto desenvolvido para a disciplina de Tópicos Especiais em Informática do curso de Análise e Desenvolvimento de Sistemas na Fatec Rubens Lara
+# simplaum
 
-Grupo: Ana Maria Attademo, Júlia Fernandes, Vitória Basile
+Victor Santos de Oliveira - Raphael Fleury - Thiago Alcântara Cardoso

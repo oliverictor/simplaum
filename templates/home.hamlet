@@ -9,7 +9,7 @@
     
     <div #header-content-indice>
         <h1 class="negrito">Hotel Simplaum
-        <p class="texto1">Conheça o Hotel Simplaum, conforto, charme e um toque de aventura
+        <p class="texto1">Conheça o Hotel Simplaum, conforto, charme e um toque de aventura. 
     
     <footer #rodape>
         <div>
