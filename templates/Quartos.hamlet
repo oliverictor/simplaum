@@ -1,0 +1,20 @@
+<div #background>
+ 
+    <div #menu>
+        <a href=@{HomeR}>Home
+        <a class="active" href=@{QuartosR}>Quartos
+        <a href=@{CadastroR}>Cadastro
+        <a href=@{SobreR}>Sobre
+    
+    <div #header-content-indice>
+        <h1 class="negrito">Quartos
+        <p class="texto1">Nossos quartos são repletos de autenticidade e exoterismo
+        <a #btn href=@{IndochinaR}>Visitar Indochina
+        <a #btn href=@{SelvagemR}>Visitar Selvagem
+    
+    <footer #rodape>
+        <div #rodape-container>
+            <div #logobaixo>
+                <img src="/static/img/logobranco.png">
+            <div #right-col>
+               <p class="right-text">Site projetado por Raphael Fleury / Thiago Cardoso / Victor Santos

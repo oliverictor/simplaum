@@ -1,0 +1,149 @@
+#background
+    background: url("../static/img/montanha.jpg")
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    background-attachment: fixed;
+   
+
+#logo img
+  margin-top: 50px
+  margin-bottom: 50px
+  margin-left: 40px
+  width: 200px
+
+
+#menu
+  overflow: hidden;
+  background-color: #000;
+  
+    
+
+#menu a 
+  float: left
+  color: #FFF
+  text-align: center
+  padding: 14px 16px
+  text-decoration: none
+  font-size: 17px
+
+
+#menu a:hover 
+  background-color: #00C2FF
+  color: black
+
+
+#menu a:active 
+  background-color: #00C2FF
+  color: white
+
+
+#header-content-indice
+    max-width:400px
+    margin:150px auto
+    text-align:center
+
+#header-content-quartos
+    max-width:400px
+    margin:150px auto
+    text-align:center
+
+#header-content-sobre
+    max-width:600px
+    margin:150px auto
+    text-align:center
+    
+
+h1.negrito
+    margin-bottom:11px
+    text
+    font-size:110px
+    color:#FFF
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #000;
+    font-family: times
+
+h1.negrito2
+    margin-bottom:11px
+    text
+    font-size:75px
+    color:#FFF
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #000;
+    font-family: times
+
+p.texto1 
+    font-size:25px
+    color:#FFF
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #000;
+
+#rodape
+  background: #000
+  padding: 20px 0
+
+
+#rodape-container
+  max-width: 1300px
+  margin: auto
+  padding: 0 20px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  flex-wrap: wrap-reverse
+
+#logobaixo img
+   width: 180px
+
+h1.right-col
+  font-size: 26px;
+
+p.right-text
+    color:#FFF
+
+#link-content
+    text-decoration: none 
+    font-size: 1.5em
+    max-width:400px
+    margin:150px auto
+    text-align:center
+
+#link-content a:link
+    color: white
+    background-color: transparent
+    text-decoration: none
+
+#link-content a:visited
+    color: blue
+    background-color: transparent
+    text-decoration: none
+
+#link-content a:hover
+    color: yellow;
+    background-color: transparent
+    text-decoration: underline
+
+#link-content a:active
+    color: yellow
+    background-color: transparent
+    text-decoration: underline   
+
+#img-indochina img
+  border: 1px solid #000
+  border-radius: 10px
+  padding: 5px
+  width: 450px
+  display: block
+  margin-left: auto;
+  margin-right: auto 
+
+#header-content-titulo-quarto
+    max-width:400px
+    margin:50px auto
+    text-align:center
+
+ul.texto1
+    font-size:25px
+    color:#FFF
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #000;

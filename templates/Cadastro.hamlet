@@ -1,0 +1,18 @@
+ 
+<div #background>
+    <div #menu>
+        <a href=@{HomeR}>Home
+        <a href=@{QuartosR}>Quartos
+        <a class="active" href=@{CadastroR}>Cadastro
+        <a href=@{SobreR}>Sobre
+     
+    <div #header-content-indice>
+        <h1 class="negrito">Area de Cadastro
+        <p class="texto1">Página em construção aguarde...
+   
+    <footer #rodape>
+        <div #rodape-container>
+            <div #logobaixo>
+                <img src="/static/img/logobranco.png">
+            <div #right-col>
+               <p class="right-text">Site projetado por Raphael Fleury / Thiago Cardoso / Victor Santos

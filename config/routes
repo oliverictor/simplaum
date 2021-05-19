@@ -1,0 +1,11 @@
+/static StaticR Static appStatic
+
+/favicon.ico FaviconR GET
+/robots.txt RobotsR GET
+
+/ HomeR GET
+/Quartos QuartosR GET 
+/Cadastro CadastroR GET
+/Sobre SobreR GET
+/Indochina IndochinaR GET
+/Selvagem SelvagemR GET
