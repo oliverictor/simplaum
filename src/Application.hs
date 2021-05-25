@@ -43,6 +43,7 @@ import Handler.Selvagem
 import Handler.Cadastro
 import Handler.Quartos
 import Handler.Sobre
+import Handler.Cliente
 
 
 -- This line actually creates our YesodDispatch instance. It is the second half

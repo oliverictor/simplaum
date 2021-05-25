@@ -9,3 +9,7 @@
 /Sobre SobreR GET
 /Indochina IndochinaR GET
 /Selvagem SelvagemR GET
+/Cliente ClienteR GET POST
+/cliente/perfil/#ClienteId PerfilR GET
+/clientes ListaCliR GET
+/cliente/#ClienteId ApagarCliR POST
