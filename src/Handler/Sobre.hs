@@ -16,5 +16,6 @@ getSobreR = do
         -- estatico
         addStylesheet (StaticR css_bootstrap_css)
         setTitle "Sobre" 
+        toWidgetHead $(cassiusFile "templates/Padrao.cassius")
         toWidgetHead $(cassiusFile "templates/Sobre.cassius")
         $(whamletFile "templates/Sobre.hamlet")

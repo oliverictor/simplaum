@@ -7,11 +7,13 @@
 module Handler.Cliente where
 
 import Import
-
+import Text.Cassius
+import Text.Lucius
+ 
 formCliente :: Form Cliente
-formCliente = renderDivs $ Cliente 
-    <$> areq textField "Nome: "  Nothing 
-    <*> areq textField "Cpf:  "  Nothing
+formCliente = renderDivs $ Cliente
+    <$> areq textField "Nome: "  Nothing
+    <*> areq textField "CPF:  "  Nothing
     <*> areq intField  "Idade: " Nothing
     
 getClienteR :: Handler Html
@@ -19,15 +21,20 @@ getClienteR = do
     (widget,_) <- generateFormPost formCliente
     msg <- getMessage
     defaultLayout $ do
-        [whamlet|
-            $maybe mensa <- msg
-                <div>
-                    ^{mensa}
-            
-            <form method=post action=@{ClienteR}>
-                ^{widget}
-                <input type="submit" value="Cadastrar">
-        |]
+        addStylesheet (StaticR css_bootstrap_css)
+        toWidgetHead $(cassiusFile "templates/Padrao.cassius")
+        toWidgetHead $(cassiusFile "templates/Cadastro.cassius")
+        $(whamletFile "templates/Cadastro.hamlet")
+
+getCadastroR :: Handler Html
+getCadastroR = do
+    (widget,_) <- generateFormPost formCliente
+    msg <- getMessage
+    defaultLayout $ do
+        addStylesheet (StaticR css_bootstrap_css)
+        toWidgetHead $(cassiusFile "templates/Padrao.cassius")
+        toWidgetHead $(cassiusFile "templates/Cadastro.cassius")
+        $(whamletFile "templates/Cadastro.hamlet")
 
 postClienteR :: Handler Html
 postClienteR = do
@@ -37,41 +44,29 @@ postClienteR = do
             runDB $ insert cliente
             setMessage [shamlet|
                 <div>
-                    CLIENTE INSERIDO COM SUCESSO!
+                    Cliente #{clienteNome cliente} inserido com sucesso!
             |]
             redirect ClienteR
-        _ -> redirect HomeR
-    
--- /cliente/perfil/#ClienteId PerfilR GET
--- /clientes ListaCliR GET
--- /cliente/#ClienteId/apagar ApagarCliR POST
+        _ -> redirect ClientesPageR
 
--- faz um select * from cliente where id = cid 
--- Se falhar mostra uma pagina de erro.
--- /cliente/perfil/1 => cid = 1
 getPerfilR :: ClienteId -> Handler Html
 getPerfilR cid = do
     cliente <- runDB $ get404 cid
-    defaultLayout [whamlet|
-        <h1>
-            Perfil de #{clienteNome cliente}
-        <h2>
-            Cpf: #{clienteCpf cliente}
-        <h2>
-            Idade: #{clienteIdade cliente}
-    |]
+    defaultLayout $ do
+        addStylesheet (StaticR css_bootstrap_css)
+        toWidgetHead $(cassiusFile "templates/Padrao.cassius")
+        $(whamletFile "templates/Cliente.hamlet")
 
-getListaCliR :: Handler Html
-getListaCliR = do
-    -- clientes = [Entity 1 (Cliente "Teste" "..." 45), Entity 2 (Cliente "Teste2" "..." 18), ...]
+getClientesPageR :: Handler Html
+getClientesPageR = do
     clientes <- runDB $ selectList [] [Asc ClienteNome]
-    defaultLayout $(whamletFile "templates/Cliente.hamlet")
+    defaultLayout $ do
+        addStylesheet (StaticR css_bootstrap_css)
+        toWidgetHead $(cassiusFile "templates/Padrao.cassius")
 
--- delete from cliente where id = cid
+        $(whamletFile "templates/Clientes.hamlet")
+
 postApagarCliR :: ClienteId -> Handler Html
 postApagarCliR cid = do
     runDB $ delete cid
-    redirect ListaCliR
-
-
-   
+    redirect ClientesPageR

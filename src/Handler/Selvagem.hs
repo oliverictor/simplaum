@@ -15,6 +15,7 @@ getSelvagemR = do
     defaultLayout $ do 
         -- estatico
         addStylesheet (StaticR css_bootstrap_css)
-        setTitle "Quarto Selvagem" 
+        setTitle "Quarto Selvagem"
+        toWidgetHead $(cassiusFile "templates/Padrao.cassius")
         toWidgetHead $(cassiusFile "templates/Selvagem.cassius")
         $(whamletFile "templates/Selvagem.hamlet")

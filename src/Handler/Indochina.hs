@@ -15,6 +15,7 @@ getIndochinaR = do
     defaultLayout $ do 
         -- estatico
         addStylesheet (StaticR css_bootstrap_css)
-        setTitle "Quarto Indochina" 
+        setTitle "Quarto Indochina"
+        toWidgetHead $(cassiusFile "templates/Padrao.cassius")
         toWidgetHead $(cassiusFile "templates/Indochina.cassius")
         $(whamletFile "templates/Indochina.hamlet")

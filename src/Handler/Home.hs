@@ -21,8 +21,9 @@ import Text.Julius
 getHomeR :: Handler Html
 getHomeR = do
     defaultLayout $ do
-        setTitle "Home" 
+        setTitle "Home"
         -- estatico
         addStylesheet (StaticR css_bootstrap_css)
-        toWidgetHead $(cassiusFile "templates/home.cassius")
-        $(whamletFile "templates/home.hamlet")
+        toWidgetHead $(cassiusFile "templates/Padrao.cassius")
+        toWidgetHead $(cassiusFile "templates/Home.cassius")
+        $(whamletFile "templates/Home.hamlet")

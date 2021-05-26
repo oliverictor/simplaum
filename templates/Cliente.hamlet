@@ -1,23 +1,18 @@
-<table>
-    <thead>
-        <tr>
-            <th>
-                NOME
-            <th>
-                CPF
-            <th>
-                IDADE
-            <th>
-            
-    <tbody>
-        $forall Entity cid cliente <- clientes
-            <tr>
-                <td>
-                    #{clienteNome cliente}
-                <td>
-                    #{clienteCpf cliente}
-                <td>
-                    #{clienteIdade cliente}
-                <td>
-                    <form method=post action=@{ApagarCliR cid}>
-                        <input type="submit" value="X">
+ <div #background>
+    <div #menu>
+        <a href=@{HomeR}>Home
+        <a href=@{QuartosR}>Quartos
+        <a class="active" href=@{CadastroR}>Cadastro
+        <a href=@{SobreR}>Sobre
+     
+    <div #header-content-indice>
+        <h2>#{clienteNome cliente}
+        <p>CPF: #{clienteCpf cliente}
+        <p>Idade: #{clienteIdade cliente}
+   
+    <footer #rodape>
+        <div #rodape-container>
+            <div #logobaixo>
+                <img src="/static/img/logobranco.png">
+            <div #right-col>
+               <p class="right-text">Site projetado por Raphael Fleury / Thiago Cardoso / Victor Santos

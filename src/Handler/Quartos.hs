@@ -16,5 +16,6 @@ getQuartosR = do
         -- estatico
         addStylesheet (StaticR css_bootstrap_css)
         setTitle "Quartos" 
+        toWidgetHead $(cassiusFile "templates/Padrao.cassius")
         toWidgetHead $(cassiusFile "templates/Quartos.cassius")
         $(whamletFile "templates/Quartos.hamlet")

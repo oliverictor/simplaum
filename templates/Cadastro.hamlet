@@ -1,5 +1,4 @@
- 
-<div #background>
+ <div #background>
     <div #menu>
         <a href=@{HomeR}>Home
         <a href=@{QuartosR}>Quartos
@@ -7,8 +6,22 @@
         <a href=@{SobreR}>Sobre
      
     <div #header-content-indice>
-        <h1 class="negrito">Area de Cadastro
-        <p class="texto1">Página em construção aguarde...
+        <h1 class="negrito">Cadastro
+
+        $maybe mensa <- msg
+            <div>
+                ^{mensa}
+
+        <form method=post action=@{ClienteR}>
+            ^{widget}
+            $# <label>Nome
+            $#     <input class="form-control" type="text" id="nome" required placeholder="Victor Santos">
+            $# <label>CPF
+            $#     <input class="form-control" type="text" maxlength=11 id="cpf" required placeholder="000.000.000-00">
+            $# <label>Idade
+            $#     <input class="form-control" type="number" maxlength=3 min=0 max=200 id="idade" require>
+            $# <br>
+            <input type="submit" class="btn btn-primary mt-3" value="Cadastrar">
    
     <footer #rodape>
         <div #rodape-container>

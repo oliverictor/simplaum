@@ -1,41 +1,38 @@
 <div #background>
- 
- 
+
     <div #menu>
         <a href=@{HomeR}>Home
         <a class="active" href=@{QuartosR}>Quartos
         <a href=@{CadastroR}>Cadastro
         <a href=@{SobreR}>Sobre
-    
-    <div #logo>
-        <img src="/static/img/logobranco.png">
 
-      
+    $# <div #logo>
+    $#     <img src="/static/img/logobranco.png">
+
     <div #header-content-indice>
         <h1 class="negrito">Quarto Selvagem
         <p class="texto1">Para você que sempre sonhou em ser o Tarzan!
-    
+
     <div #header-content-titulo-quarto> 
             <p class="texto1">Ambiente Selvagem
-    <div #img-indochina>
+    <div #img-quarto>
          <img src="/static/img/selvagem/selvagem1.jpg">
-        
+
     <div #header-content-titulo-quarto> 
             <p class="texto1">Privacidade e Tranquilidade
-    <div #img-indochina>
+    <div #img-quarto>
             <img src="/static/img/selvagem/selvagem2.jpg">
 
     <div #header-content-titulo-quarto> 
             <p class="texto1">Banheiro à ciel ouvert 
-    <div #img-indochina>
+    <div #img-quarto>
             <img src="/static/img/selvagem/selvagem3.jpg">
-    
+
     <div #header-content-titulo-quarto> 
             <p class="texto1">Pratique Arco e Fecha!
-    <div #img-indochina>
+    <div #img-quarto>
             <img src="/static/img/selvagem/selvagem4.jpg">
 
-   
     <div #header-content-quartos>
         <h1 class="negrito2">Inclusos
         <ul class="texto1">
@@ -46,15 +43,14 @@
             <li>Animais selvagem próximos, não faça barulho, sério.
             <li>Frutas Silvestres, por ai...
             <li>Treinamento com Arco e Flecha com o sósia do Rambo!!!
-    
+
     <div #link-content>
         <a href=@{IndochinaR}>Visitar outro quarto
-
 
     <div #header-content-sobre>
         <h1 class="negrito2">Sobre
         <p class="texto1">Hotel Simplão está desde 2021 oferecendo a todos os hóspedes os melhores quartos com os melhores serviços, estamos localizados em Hologongo, um ambiente sensacional para todos
-      
+
     <footer #rodape>
         <div #rodape-container>
             <div #logo>

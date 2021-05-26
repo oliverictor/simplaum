@@ -1,41 +1,38 @@
 <div #background>
  
- 
     <div #menu>
         <a href=@{HomeR}>Home
         <a class="active" href=@{QuartosR}>Quartos
         <a href=@{CadastroR}>Cadastro
         <a href=@{SobreR}>Sobre
     
-    <div #logo>
-        <img src="/static/img/logobranco.png">
+    $# <div #logo>
+    $#     <img src="/static/img/logobranco.png">
 
-      
     <div #header-content-indice>
         <h1 class="negrito">Quarto Indochina
         <p class="texto1">Uma viagem aos mistérios do sul asiático
     
     <div #header-content-titulo-quarto> 
             <p class="texto1">Quarto climatizado
-    <div #img-indochina>
+    <div #img-quarto>
          <img src="/static/img/indochina/indochina1.jpg">
         
     <div #header-content-titulo-quarto> 
             <p class="texto1">Garagem privativa e varanda gourmet
-    <div #img-indochina>
+    <div #img-quarto>
             <img src="/static/img/indochina/indochina2.jpg">
 
     <div #header-content-titulo-quarto> 
             <p class="texto1">Salão de jogos
-    <div #img-indochina>
+    <div #img-quarto>
             <img src="/static/img/indochina/indochina3.jpg">
     
     <div #header-content-titulo-quarto> 
             <p class="texto1">Banheiro Privativo,um luxo
-    <div #img-indochina>
+    <div #img-quarto>
             <img src="/static/img/indochina/indochina4.jpg">
 
-   
     <div #header-content-quartos>
         <h1 class="negrito2">Inclusos
         <ul class="texto1">
@@ -49,7 +46,6 @@
     
     <div #link-content>
         <a href=@{SelvagemR}>Visitar outro quarto
-
 
     <div #header-content-sobre>
         <h1 class="negrito2">Sobre

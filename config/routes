@@ -4,12 +4,12 @@
 /robots.txt RobotsR GET
 
 / HomeR GET
-/Quartos QuartosR GET 
-/Cadastro CadastroR GET
-/Sobre SobreR GET
-/Indochina IndochinaR GET
-/Selvagem SelvagemR GET
-/Cliente ClienteR GET POST
+/quartos QuartosR GET 
+/quartos/Indochina IndochinaR GET
+/quartos/Selvagem SelvagemR GET
+/clientes/cadastrar CadastroR GET
+/clientes ClientesPageR GET
+/cliente ClienteR GET POST
 /cliente/perfil/#ClienteId PerfilR GET
-/clientes ListaCliR GET
 /cliente/#ClienteId ApagarCliR POST
+/sobre SobreR GET

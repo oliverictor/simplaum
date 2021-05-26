@@ -1,6 +1,4 @@
- 
 <div #background>
- 
     <div #menu>
         <a class="active" href=@{HomeR}>Home
         <a href=@{QuartosR}>Quartos
@@ -12,7 +10,7 @@
         <p class="texto1">Conheça o Hotel Simplaum, conforto, charme e um toque de aventura. 
     
     <footer #rodape>
-        <div>
+        <div #rodape-container>
             <div #logobaixo>
                 <img src="/static/img/logobranco.png">
             <div #right-col>
