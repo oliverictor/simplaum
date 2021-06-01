@@ -43,7 +43,7 @@ img
   color: #000
 
 #header-content-indice
-  max-width: 400px
+  max-width: 80%
   margin: 10px auto
   text-align: center
   justify-content: space-around
@@ -134,3 +134,14 @@ p.right-text
   color: yellow
   background-color: transparent
   text-decoration: underline
+
+.table-back
+  background-color: white
+  border-radius: 5px
+  text-align: left;
+
+.td-controls
+  display: flex;
+
+.td-controls *
+  margin-right: 5px;
