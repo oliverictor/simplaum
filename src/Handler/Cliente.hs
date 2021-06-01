@@ -8,6 +8,7 @@ module Handler.Cliente where
 
 import Import
 import Text.Cassius
+import Handler.Util
 
 -- formCliente :: Form Cliente
 -- formCliente = renderDivs $ Cliente
@@ -91,6 +92,3 @@ postApagarCliR :: ClienteId -> Handler Html
 postApagarCliR cid = do
     runDB $ delete cid
     redirect ClientesPageR
-
-formWidget :: Text -> Widget -> Route App -> Maybe Html -> Widget
-formWidget title widget route errorMsg = $(whamletFile "templates/ClienteForm.hamlet")

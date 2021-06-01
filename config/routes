@@ -16,4 +16,6 @@
 /cliente/editar/#ClienteId EditarCliR GET POST
 /cliente/#ClienteId ApagarCliR POST
 
+/usuario UsuarioR GET POST
+
 /sobre SobreR GET
