@@ -8,7 +8,7 @@ module Handler.Selvagem where
 
 import Import
 import Text.Cassius
-import Text.Julius
+import Handler.Util
 
 getSelvagemR :: Handler Html
 getSelvagemR = do
@@ -17,5 +17,7 @@ getSelvagemR = do
         addStylesheet (StaticR css_bootstrap_css)
         setTitle "Quarto Selvagem"
         toWidgetHead $(cassiusFile "templates/Padrao.cassius")
-        toWidgetHead $(cassiusFile "templates/Selvagem.cassius")
+        toWidgetHead $(cassiusFile "templates/Quarto.cassius")
+        toWidget (navWidget "Home")
         $(whamletFile "templates/Selvagem.hamlet")
+        toWidget footerWidget

@@ -1,0 +1,6 @@
+<footer #rodape>
+    <div #rodape-container>
+        <div #logobaixo>
+            <img src="/static/img/logobranco.png">
+        <div #right-col>
+            <p class="right-text">Site projetado por Raphael Fleury / Thiago Cardoso / Victor Santos

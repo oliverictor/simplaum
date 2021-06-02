@@ -1,38 +1,24 @@
- <div #background>
-    <div #menu>
-        <a href=@{HomeR}>Home
-        <a href=@{QuartosR}>Quartos
-        <a class="active" href=@{CadastroR}>Cadastro
-        <a href=@{SobreR}>Sobre
-     
-    <div #header-content-indice>
-        <h1 class="negrito">Clientes
-        <div .table-responsive .table-back>
-            <table class="table table-dark table-striped table-sm">
-                <thead>
+<div #header-content-indice>
+    <h1 class="negrito">Clientes
+    <div .table-responsive .table-back>
+        <table class="table table-dark table-striped table-sm">
+            <thead>
+                <tr>
+                    <th>Nome
+                    <th>CPF
+                    <th>Idade
+                    <th>Ações
+            <tbody>
+                $forall Entity cid cliente <- clientes
                     <tr>
-                        <th>Nome
-                        <th>CPF
-                        <th>Idade
-                        <th>Ações
-                <tbody>
-                    $forall Entity cid cliente <- clientes
-                        <tr>
-                            <td>
-                                #{clienteNome cliente}
-                            <td>
-                                #{clienteCpf cliente}
-                            <td>
-                                #{clienteIdade cliente}
-                            <td>
-                                <div .td-controls>
-                                    <a .btn .btn-success href=@{EditarCliR cid}>Editar
-                                    <form method=post action=@{ApagarCliR cid}>
-                                        <input .btn .btn-danger type="submit" value="X">
-   
-    <footer #rodape>
-        <div #rodape-container>
-            <div #logobaixo>
-                <img src="/static/img/logobranco.png">
-            <div #right-col>
-               <p class="right-text">Site projetado por Raphael Fleury / Thiago Cardoso / Victor Santos
+                        <td>
+                            #{clienteNome cliente}
+                        <td>
+                            #{clienteCpf cliente}
+                        <td>
+                            #{clienteIdade cliente}
+                        <td>
+                            <div .td-controls>
+                                <a .btn .btn-success href=@{EditarCliR cid}>Editar
+                                <form method=post action=@{ApagarCliR cid}>
+                                    <input .btn .btn-danger type="submit" value="X">

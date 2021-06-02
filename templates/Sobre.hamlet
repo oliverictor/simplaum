@@ -1,18 +1,3 @@
-<div #background>
- 
-    <div #menu>
-        <a href=@{HomeR}>Home
-        <a href=@{QuartosR}>Quartos
-        <a href=@{CadastroR}>Cadastro
-        <a class="active" href=@{SobreR}>Sobre
-    
-    <div #header-content-indice>
-        <h1 class="negrito">Sobre
-        <p class="texto1">Hotel Simplão está desde 2021 oferecendo a todos os hospedes os melhores quartos com os melhores serviços, estamos localizados em Hologongo, um ambiente sensacional para todos!
-        
-    <footer #rodape>
-        <div #rodape-container>
-            <div #logobaixo>
-                <img src="/static/img/logobranco.png">
-            <div #right-col>
-               <p class="right-text">Site projetado por Raphael Fleury / Thiago Cardoso / Victor Santos
+<div #header-content-indice>
+    <h1 class="negrito">Sobre
+    <p class="texto1">Hotel Simplão está desde 2021 oferecendo a todos os hospedes os melhores quartos com os melhores serviços, estamos localizados em Hologongo, um ambiente sensacional para todos!

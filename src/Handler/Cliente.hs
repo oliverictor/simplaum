@@ -10,11 +10,6 @@ import Import
 import Text.Cassius
 import Handler.Util
 
--- formCliente :: Form Cliente
--- formCliente = renderDivs $ Cliente
---     <$> areq textField "Nome: "  Nothing
---     <*> areq textField "CPF:  "  Nothing
---     <*> areq intField  "Idade: " Nothing
 formCliente :: Maybe Cliente -> Form Cliente
 formCliente mc = renderDivs $ Cliente
     <$> areq textField "Nome: "  (fmap clienteNome mc)
@@ -29,7 +24,9 @@ getClienteR = do
         addStylesheet (StaticR css_bootstrap_css)
         toWidgetHead $(cassiusFile "templates/Padrao.cassius")
         toWidgetHead $(cassiusFile "templates/Cadastro.cassius")
+        toWidget (navWidget "Home")
         $(whamletFile "templates/Cadastro.hamlet")
+        toWidget footerWidget
 
 getCadastroR :: Handler Html
 getCadastroR = do
@@ -39,7 +36,9 @@ getCadastroR = do
         addStylesheet (StaticR css_bootstrap_css)
         toWidgetHead $(cassiusFile "templates/Padrao.cassius")
         toWidgetHead $(cassiusFile "templates/Cadastro.cassius")
+        toWidget (navWidget "Home")
         $(whamletFile "templates/Cadastro.hamlet")
+        toWidget footerWidget
 
 postClienteR :: Handler Html
 postClienteR = do
@@ -60,7 +59,9 @@ getPerfilR cid = do
     defaultLayout $ do
         addStylesheet (StaticR css_bootstrap_css)
         toWidgetHead $(cassiusFile "templates/Padrao.cassius")
+        toWidget (navWidget "Home")
         $(whamletFile "templates/Cliente.hamlet")
+        toWidget footerWidget
 
 getClientesPageR :: Handler Html
 getClientesPageR = do
@@ -68,15 +69,21 @@ getClientesPageR = do
     defaultLayout $ do
         addStylesheet (StaticR css_bootstrap_css)
         toWidgetHead $(cassiusFile "templates/Padrao.cassius")
-
+        toWidget (navWidget "Home")
         $(whamletFile "templates/Clientes.hamlet")
+        toWidget footerWidget
 
 getEditarCliR :: ClienteId -> Handler Html
 getEditarCliR cid = do
     cliente <- runDB $ get404 cid
     (widget,_) <- generateFormPost (formCliente (Just cliente))
     msg <- getMessage
-    defaultLayout $ (formWidget "Editar" widget (EditarCliR cid) msg)
+    defaultLayout $ do
+        addStylesheet (StaticR css_bootstrap_css)
+        toWidgetHead $(cassiusFile "templates/Padrao.cassius")
+        toWidget (navWidget "Home")
+        (formWidget "Editar" widget (EditarCliR cid) msg)
+        toWidget footerWidget
 
 postEditarCliR :: ClienteId -> Handler Html
 postEditarCliR cid = do

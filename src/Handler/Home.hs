@@ -7,14 +7,15 @@
 module Handler.Home where
 
 import Import
+import Handler.Util
 import Text.Cassius
 
 getHomeR :: Handler Html
 getHomeR = do
     defaultLayout $ do
         setTitle "Home"
-        -- estatico
         addStylesheet (StaticR css_bootstrap_css)
         toWidgetHead $(cassiusFile "templates/Padrao.cassius")
-        toWidgetHead $(cassiusFile "templates/Home.cassius")
+        toWidget (navWidget "Home")
         $(whamletFile "templates/Home.hamlet")
+        toWidget footerWidget

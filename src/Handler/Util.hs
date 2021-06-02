@@ -11,7 +11,11 @@ import Import
 formWidget :: Text -> Widget -> Route App -> Maybe Html -> Widget
 formWidget title widget route errorMsg = $(whamletFile "templates/Form.hamlet")
 
-navWidget :: Text -> Maybe Usuario -> Widget
-navWidget active usuario = do
+navWidget :: Text -> Widget
+navWidget active = do
     usuario <- lookupSession "_ID"
     $(whamletFile "templates/Nav.hamlet")
+
+footerWidget :: Widget
+footerWidget = do
+    $(whamletFile "templates/Footer.hamlet")

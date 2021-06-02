@@ -1,11 +1,11 @@
 <div #menu>
-    <a class="active" href=@{HomeR}>Home
+    <a href=@{HomeR}>Home
     <a href=@{QuartosR}>Quartos
     <a href=@{CadastroR}>Cadastro
     <a href=@{SobreR}>Sobre
 
     $maybe email <- usuario
         <form method=post action=@{SairR}>
-            <input type="submit">Sair
+            <input .btn-danger type="submit" value="Sair">
     $nothing
         <a href=@{AuthR}>Login

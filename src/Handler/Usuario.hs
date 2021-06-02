@@ -7,20 +7,33 @@
 module Handler.Usuario where
 
 import Import
+import Text.Cassius
 import Handler.Util
 
 formLogin :: Form (Usuario, Text)
 formLogin = renderDivs $ (,)
     <$> (Usuario
-        <$> areq textField "Email: " Nothing
-        <*> areq passwordField "CPF:  " Nothing)
-    <*> areq passwordField "Confirmação: " Nothing
+        <$> areq textField (FieldSettings "E-mail: "
+            (Just "E-mail do usuário") (Just "email") Nothing [("class","ml-2")]
+        ) Nothing
+        <*> areq passwordField (FieldSettings "CPF:  "
+            (Just "CPF do usuário") (Just "cpf") Nothing [("class","ml-2")]
+        ) Nothing
+    )
+    <*> areq passwordField (FieldSettings "Confirmação: "
+        (Just "Confirmação") (Just "confirm") Nothing [("class","ml-2")]
+    ) Nothing
 
 getUsuarioR :: Handler Html
 getUsuarioR = do
     (widget,_) <- generateFormPost formLogin
     msg <- getMessage
-    defaultLayout $ (formWidget "Cadastrar" widget UsuarioR msg)
+    defaultLayout $ do 
+        addStylesheet (StaticR css_bootstrap_css)
+        toWidgetHead $(cassiusFile "templates/Padrao.cassius")
+        toWidgetHead $(cassiusFile "templates/Form.cassius")
+        formWidget "Cadastrar" widget UsuarioR msg
+        toWidget footerWidget
 
 postUsuarioR :: Handler Html
 postUsuarioR = do

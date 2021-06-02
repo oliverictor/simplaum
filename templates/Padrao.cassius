@@ -1,10 +1,11 @@
-#background
+body
   background: url("../static/img/montanha.jpg")
   background-repeat: no-repeat
   background-size: cover
   background-position: center
   background-attachment: fixed
   height: 100vh
+  padding-top: 10vh
 
 img
   margin-top: 3px
@@ -23,8 +24,11 @@ img
 #menu
   overflow: hidden
   background-color: #000
+  position: fixed
+  width: 100%
+  top: 0px
 
-#menu a 
+#menu a,input
   float: left
   color: #FFF
   text-align: center
@@ -33,6 +37,7 @@ img
   font-size: 17px
   font-weight: bold
   text-transform: uppercase
+  border: none
 
 #menu a:hover 
   background: #FFF

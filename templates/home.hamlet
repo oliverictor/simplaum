@@ -1,17 +1,3 @@
-<div #background>
-    <div #menu>
-        <a class="active" href=@{HomeR}>Home
-        <a href=@{QuartosR}>Quartos
-        <a href=@{CadastroR}>Cadastro
-        <a href=@{SobreR}>Sobre
-    
-    <div #header-content-indice>
-        <h1 class="negrito">Hotel Simplaum
-        <p class="texto1">Conheça o Hotel Simplaum, conforto, charme e um toque de aventura. 
-    
-    <footer #rodape>
-        <div #rodape-container>
-            <div #logobaixo>
-                <img src="/static/img/logobranco.png">
-            <div #right-col>
-               <p class="right-text">Site projetado por Raphael Fleury / Thiago Cardoso / Victor Santos
+<div #header-content-indice>
+    <h1 class="negrito">Hotel Simplaum
+    <p class="texto1">Conheça o Hotel Simplaum, conforto, charme e um toque de aventura. 

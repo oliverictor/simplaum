@@ -20,4 +20,6 @@
 /login AuthR GET POST
 /logout SairR POST
 
+/adminR AdminR GET
+
 /sobre SobreR GET
