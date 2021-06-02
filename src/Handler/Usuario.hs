@@ -7,7 +7,6 @@
 module Handler.Usuario where
 
 import Import
-import Text.Cassius
 import Handler.Util
 
 formLogin :: Form (Usuario, Text)
@@ -28,17 +27,31 @@ postUsuarioR = do
     ((result,_),_) <- runFormPost formLogin
     case result of
         FormSuccess (usuario@(Usuario email senha), conf) -> do
-            if senha == conf then do
-                runDB $ insert usuario
-                setMessage [shamlet|
-                    <div>
-                        Usuário inserido com sucesso!
-                |]
-                redirect UsuarioR
-            else do
-                setMessage [shamlet|
-                    <div>
-                        Credenciais inválidas!
-                |]
-                redirect UsuarioR
+            usuarioExiste <- runDB $ getBy (UniqueEmail2 email)
+            case usuarioExiste of
+                Just _ -> do
+                    setMessage [shamlet|
+                        <div>
+                            E-mail já cadastrado!
+                    |]
+                    redirect UsuarioR
+                Nothing -> do
+                    if senha == conf then do
+                        runDB $ insert usuario
+                        setMessage [shamlet|
+                            <div>
+                                Usuário inserido com sucesso!
+                        |]
+                        redirect UsuarioR
+                    else do
+                        setMessage [shamlet|
+                            <div>
+                                Credenciais inválidas!
+                        |]
+                        redirect UsuarioR
         _ -> redirect HomeR
+
+postSairR :: Handler Html
+postSairR = do
+    deleteSession "_ID"
+    redirect HomeR

@@ -17,5 +17,7 @@
 /cliente/#ClienteId ApagarCliR POST
 
 /usuario UsuarioR GET POST
+/login AuthR GET POST
+/logout SairR POST
 
 /sobre SobreR GET

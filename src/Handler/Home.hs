@@ -8,16 +8,7 @@ module Handler.Home where
 
 import Import
 import Text.Cassius
-import Text.Julius
---import Network.HTTP.Types.Status
---import Database.Persist.Postgresql
---import Network.HTTP.Types.Status
---import Database.Persist.Postgresql
-    
--- Interpolador @ mexe com links
 
--- O ideal eh ter apenas chamadas a templates.
--- css_bootstrap_css => css/bootstrap.css
 getHomeR :: Handler Html
 getHomeR = do
     defaultLayout $ do
