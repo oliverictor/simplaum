@@ -2,7 +2,7 @@
     <h1 class="negrito">Quartos
     <p class="texto1">Nossos quartos são repletos de autenticidade e exoterismo.
 
-    $maybe email <- usuario
+    $maybe _ <- usuario
         <a .btn .btn-success .btn-novo-quarto href=@{QuartoR}>+ Novo
 
     <div .quarto>

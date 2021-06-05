@@ -43,9 +43,8 @@ postQuartoR = do
 
 getQuartosR :: Handler Html
 getQuartosR = do
-    quartos <- runDB $ selectList [] [Asc QuartoNome]
+    -- quartos <- runDB $ selectList [] [Asc QuartoNome]
     usuario <- lookupSession "_ID"
-    a <- lookupSession "_ID"
     defaultLayout $ do 
         addStylesheet (StaticR css_bootstrap_css)
         setTitle "Quartos" 
@@ -56,6 +55,6 @@ getQuartosR = do
         toWidget footerWidget
 
 postApagarQuartoR :: QuartoId -> Handler Html
-postApagarQuartoR id = do
-    runDB $ delete id
+postApagarQuartoR qid = do
+    runDB $ delete qid
     redirect QuartosR

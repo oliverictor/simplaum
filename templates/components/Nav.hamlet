@@ -2,7 +2,7 @@
     <a href=@{HomeR}>Home
     <a href=@{QuartosR}>Quartos
 
-    $maybe email <- usuario
+    $maybe _ <- usuario
         <a href=@{ClientesPageR}>Clientes
         <a href=@{SobreR}>Sobre
         <form method=post action=@{SairR}>
