@@ -17,7 +17,7 @@ getSelvagemR = do
         addStylesheet (StaticR css_bootstrap_css)
         setTitle "Quarto Selvagem"
         toWidgetHead $(cassiusFile "templates/Padrao.cassius")
-        toWidgetHead $(cassiusFile "templates/Quarto.cassius")
-        toWidget (navWidget "Home")
-        $(whamletFile "templates/Selvagem.hamlet")
+        toWidgetHead $(cassiusFile "templates/quarto/Quarto.cassius")
+        toWidget navWidget
+        $(whamletFile "templates/quarto/Selvagem.hamlet")
         toWidget footerWidget

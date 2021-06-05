@@ -1,10 +1,10 @@
-<div #header-content-indice>
+<div #content>
     <h1 class="negrito">Cadastro
 
     $maybe mensa <- msg
         <div>
             ^{mensa}
 
-    <form method=post action=@{ClienteR}>
+    <form .cadastro method=post action=@{ClienteR}>
         ^{widget}
         <input type="submit" class="btn btn-primary mt-3" value="Cadastrar">

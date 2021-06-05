@@ -1,0 +1,31 @@
+<div #content>
+  <div #header-content-indice>
+    <h1 class="negrito">Quarto Indochina
+    <p class="texto1">Uma viagem aos mistérios do sul asiático
+  
+  <div .img-quarto>
+    <p>Quarto climatizado
+    <img src="/static/img/indochina/indochina1.jpg">
+  
+  <div .img-quarto>
+    <p>Garagem privativa e varanda gourmet
+    <img src="/static/img/indochina/indochina2.jpg">
+  
+  <div .img-quarto>
+    <p>Salão de jogos
+    <img src="/static/img/indochina/indochina3.jpg">
+
+  <div .img-quarto>
+    <p>Banheiro Privativo, um luxo
+    <img src="/static/img/indochina/indochina4.jpg">
+  
+  <div #header-content-quartos>
+    <h1 class="negrito2">Inclusos
+    <ul .inclusos>
+      <li>Cama
+      <li>Lençol
+      <li>Meia Garrafa Pet de água
+      <li>Ventilador de chão (só funciona por 10 min)
+      <li>Poster do Grande Lider Xing Xando
+      <li>Jogo Gamão
+      <li>Coco (buscar no coqueiro ao lado)

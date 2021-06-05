@@ -16,8 +16,8 @@ formLogin = renderDivs $ (,)
         <$> areq textField (FieldSettings "E-mail: "
             (Just "E-mail do usuário") (Just "email") Nothing [("class","ml-2")]
         ) Nothing
-        <*> areq passwordField (FieldSettings "CPF:  "
-            (Just "CPF do usuário") (Just "cpf") Nothing [("class","ml-2")]
+        <*> areq passwordField (FieldSettings "Senha:  "
+            (Just "Senha do usuário") (Just "senha") Nothing [("class","ml-2")]
         ) Nothing
     )
     <*> areq passwordField (FieldSettings "Confirmação: "
@@ -31,7 +31,8 @@ getUsuarioR = do
     defaultLayout $ do 
         addStylesheet (StaticR css_bootstrap_css)
         toWidgetHead $(cassiusFile "templates/Padrao.cassius")
-        toWidgetHead $(cassiusFile "templates/Form.cassius")
+        toWidgetHead $(cassiusFile "templates/components/Form.cassius")
+        navWidget
         formWidget "Cadastrar" widget UsuarioR msg
         toWidget footerWidget
 
@@ -50,7 +51,7 @@ postUsuarioR = do
                     redirect UsuarioR
                 Nothing -> do
                     if senha == conf then do
-                        runDB $ insert usuario
+                        _ <- runDB $ insert usuario
                         setMessage [shamlet|
                             <div>
                                 Usuário inserido com sucesso!

@@ -1,0 +1,28 @@
+.btn
+  padding: 10px 15px
+  border-radius: 8px
+  font-weight: bold
+  border: 0
+  color: #000
+
+.btn-novo-quarto
+  color: #FFF
+
+.quarto
+  background: currentColor
+  margin: 10px
+  padding: 10px
+  border: 1px solid #000
+  border-radius: 10px
+
+.quarto-info
+  text-align: left
+  p,a
+    color: #FFF
+  h2
+    margin: 0px
+  p
+    margin-top: 10px
+
+.quarto-preco
+  color: green

@@ -22,8 +22,9 @@ getAuthR = do
     defaultLayout $ do 
         addStylesheet (StaticR css_bootstrap_css)
         toWidgetHead $(cassiusFile "templates/Padrao.cassius")
-        toWidgetHead $(cassiusFile "templates/Form.cassius")
-        formWidget "Cadastrar" widget AuthR msg
+        toWidgetHead $(cassiusFile "templates/components/Form.cassius")
+        navWidget
+        formWidget "Login" widget AuthR msg
         toWidget footerWidget
 
 postAuthR :: Handler Html

@@ -2,6 +2,6 @@ $maybe m <- errorMsg
     <div>
         ^{m}
 
-<form method=post action=@{route}>
+<form .cadastro method=post action=@{route}>
     ^{widget}
     <input type="submit" class="btn btn-primary mt-3" value=#{title}>

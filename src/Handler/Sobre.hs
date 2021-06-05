@@ -14,9 +14,9 @@ getSobreR :: Handler Html
 getSobreR = do
     defaultLayout $ do 
         addStylesheet (StaticR css_bootstrap_css)
-        setTitle "Sobre" 
+        setTitle "Sobre"
         toWidgetHead $(cassiusFile "templates/Padrao.cassius")
         toWidgetHead $(cassiusFile "templates/Sobre.cassius")
-        toWidget (navWidget "Home")
+        toWidget navWidget
         $(whamletFile "templates/Sobre.hamlet")
         toWidget footerWidget

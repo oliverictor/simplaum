@@ -1,5 +1,0 @@
-<div #header-content-indice>
-    <h1 class="negrito">Quartos
-    <p class="texto1">Nossos quartos são repletos de autenticidade e exoterismo.
-    <a #btn href=@{IndochinaR}>Visitar Indochina
-    <a #btn href=@{SelvagemR}>Visitar Selvagem

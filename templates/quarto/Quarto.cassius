@@ -1,0 +1,23 @@
+.img-quarto
+  p
+    max-width: 400px
+    margin: 50px auto
+    margin-bottom: 10px
+    text-align: center
+    color: #FFF
+    font-family: times
+    font-size: 20px
+  img
+    border: 1px solid #000
+    border-radius: 10px
+    padding: 5px
+    width: 450px
+    display: block
+    margin-left: auto;
+    margin-right: auto
+
+#background
+  height: 100%
+
+.inclusos li
+  color: #FFF

@@ -1,0 +1,42 @@
+<div #content>
+    <h1 class="negrito">Quartos
+    <p class="texto1">Nossos quartos são repletos de autenticidade e exoterismo.
+
+    $maybe email <- usuario
+        <a .btn .btn-success .btn-novo-quarto href=@{QuartoR}>+ Novo
+
+    <div .quarto>
+        <div .quarto-info>
+            <h2>Indochina
+            <span .quarto-preco>R$ 10
+            <p>Uma viagem aos mistérios do sul asiático
+            <a .btn href=@{IndochinaR}>Visitar
+            $# $maybe email <- usuario
+            $#     <div .quarto-controls>
+            $#         $# <a .btn .btn-success href=@{EditarQuartoR -1}>Editar
+            $#         <form method=post action=@{ApagarQuartoR -1}>
+            $#             <input .btn .btn-danger type="submit" value="X">
+
+    <div .quarto>
+        <div .quarto-info>
+            <h2>Selvagem
+            <span .quarto-preco>R$ 10
+            <p>Para você que sempre sonhou em ser o Tarzan!
+            <a .btn href=@{SelvagemR}>Visitar
+            $# $maybe email <- usuario
+            $#     <div .quarto-controls>
+            $#         $# <a .btn .btn-success href=@{EditarQuartoR -1}>Editar
+            $#         <form method=post action=@{ApagarQuartoR -1}>
+            $#             <input .btn .btn-danger type="submit" value="X">
+
+    $# <div .quarto>
+    $#     $forall Entity cid quarto <- quartos
+    $#         <div .quarto-info>
+    $#             <h2>#{quartoNome quarto}
+    $#             <span .quarto-preco>R$ #{quartoPreco quarto}
+    $#             <p>#{quartoDesc quarto}
+    $#             $# $maybe email <- usuario
+    $#                 <div .quarto-controls>
+    $#                     $# <a .btn .btn-success href=@{EditarQuartoR qid}>Editar
+    $#                     <form method=post action=@{ApagarQuartoR cid}>
+    $#                         <input .btn .btn-danger type="submit" value="X">

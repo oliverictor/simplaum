@@ -1,3 +1,10 @@
+form.cadastro
+    display: flex
+    flex-direction: column
+    width: max-content
+    margin-left: auto
+    margin-right: auto
+  
 .required
     display: flex
     margin: 5px
@@ -19,3 +26,7 @@
 .required label
     color: #FFFFFF;
     margin-right: 5px;
+    width: 100px;
+
+form.cadastro input[type=submit]
+    margin-left: 110px;

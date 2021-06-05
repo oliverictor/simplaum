@@ -1,0 +1,10 @@
+<div #content>
+    <h1 class="negrito">Reservar
+
+    $maybe mensa <- msg
+        <div>
+            ^{mensa}
+
+    <form method=post action=@{ReservaR cid}>
+        ^{widget}
+        <input type="submit" class="btn btn-primary mt-3" value="Reservar">

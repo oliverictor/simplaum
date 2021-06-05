@@ -12,10 +12,11 @@ import Text.Cassius
 
 getHomeR :: Handler Html
 getHomeR = do
+    usuario <- lookupSession "_ID"
     defaultLayout $ do
         setTitle "Home"
         addStylesheet (StaticR css_bootstrap_css)
         toWidgetHead $(cassiusFile "templates/Padrao.cassius")
-        toWidget (navWidget "Home")
+        toWidget navWidget
         $(whamletFile "templates/Home.hamlet")
         toWidget footerWidget

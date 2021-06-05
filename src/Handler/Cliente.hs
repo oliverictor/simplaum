@@ -23,9 +23,9 @@ getClienteR = do
     defaultLayout $ do
         addStylesheet (StaticR css_bootstrap_css)
         toWidgetHead $(cassiusFile "templates/Padrao.cassius")
-        toWidgetHead $(cassiusFile "templates/Cadastro.cassius")
-        toWidget (navWidget "Home")
-        $(whamletFile "templates/Cadastro.hamlet")
+        toWidgetHead $(cassiusFile "templates/components/Form.cassius")
+        toWidget navWidget
+        $(whamletFile "templates/cliente/Cadastro.hamlet")
         toWidget footerWidget
 
 getCadastroR :: Handler Html
@@ -35,9 +35,9 @@ getCadastroR = do
     defaultLayout $ do
         addStylesheet (StaticR css_bootstrap_css)
         toWidgetHead $(cassiusFile "templates/Padrao.cassius")
-        toWidgetHead $(cassiusFile "templates/Cadastro.cassius")
-        toWidget (navWidget "Home")
-        $(whamletFile "templates/Cadastro.hamlet")
+        toWidgetHead $(cassiusFile "templates/components/Form.cassius")
+        toWidget navWidget
+        $(whamletFile "templates/cliente/Cadastro.hamlet")
         toWidget footerWidget
 
 postClienteR :: Handler Html
@@ -45,7 +45,7 @@ postClienteR = do
     ((result,_),_) <- runFormPost (formCliente Nothing)
     case result of
         FormSuccess cliente -> do
-            runDB $ insert cliente
+            _ <- runDB $ insert cliente
             setMessage [shamlet|
                 <div>
                     Cliente #{clienteNome cliente} inserido com sucesso!
@@ -59,8 +59,8 @@ getPerfilR cid = do
     defaultLayout $ do
         addStylesheet (StaticR css_bootstrap_css)
         toWidgetHead $(cassiusFile "templates/Padrao.cassius")
-        toWidget (navWidget "Home")
-        $(whamletFile "templates/Cliente.hamlet")
+        toWidget navWidget
+        $(whamletFile "templates/cliente/Cliente.hamlet")
         toWidget footerWidget
 
 getClientesPageR :: Handler Html
@@ -69,8 +69,8 @@ getClientesPageR = do
     defaultLayout $ do
         addStylesheet (StaticR css_bootstrap_css)
         toWidgetHead $(cassiusFile "templates/Padrao.cassius")
-        toWidget (navWidget "Home")
-        $(whamletFile "templates/Clientes.hamlet")
+        toWidget navWidget
+        $(whamletFile "templates/cliente/Clientes.hamlet")
         toWidget footerWidget
 
 getEditarCliR :: ClienteId -> Handler Html
@@ -81,13 +81,13 @@ getEditarCliR cid = do
     defaultLayout $ do
         addStylesheet (StaticR css_bootstrap_css)
         toWidgetHead $(cassiusFile "templates/Padrao.cassius")
-        toWidget (navWidget "Home")
+        toWidget navWidget
         (formWidget "Editar" widget (EditarCliR cid) msg)
         toWidget footerWidget
 
 postEditarCliR :: ClienteId -> Handler Html
 postEditarCliR cid = do
-    clienteAntigo <- runDB $ get404 cid
+    _ <- runDB $ get404 cid
     ((result,_),_) <- runFormPost (formCliente Nothing)
     case result of
         FormSuccess novoCliente -> do

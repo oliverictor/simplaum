@@ -28,6 +28,8 @@ instance Yesod App where
     authRoute _ = Just AuthR
 
     isAuthorized HomeR _ = return Authorized
+    isAuthorized SobreR _ = return Authorized
+    isAuthorized QuartosR _ = return Authorized
     isAuthorized (StaticR _) _ = return Authorized
     isAuthorized AuthR _ = return Authorized
     isAuthorized UsuarioR _ = return Authorized

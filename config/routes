@@ -5,6 +5,7 @@
 
 / HomeR GET
 
+/quartos/novo QuartoR GET POST
 /quartos QuartosR GET 
 /quartos/Indochina IndochinaR GET
 /quartos/Selvagem SelvagemR GET
@@ -16,10 +17,13 @@
 /cliente/editar/#ClienteId EditarCliR GET POST
 /cliente/#ClienteId ApagarCliR POST
 
-/usuario UsuarioR GET POST
+/reserva/#ClienteId ReservaR GET POST
+/reservas/#ClienteId ReservasR GET
+
+/registro UsuarioR GET POST
 /login AuthR GET POST
 /logout SairR POST
 
-/adminR AdminR GET
+/admin AdminR GET
 
 /sobre SobreR GET

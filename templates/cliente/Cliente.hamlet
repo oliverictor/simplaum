@@ -1,4 +1,4 @@
-<div #header-content-indice>
+<div #content>
     <h2>#{clienteNome cliente}
     <p>CPF: #{clienteCpf cliente}
     <p>Idade: #{clienteIdade cliente}

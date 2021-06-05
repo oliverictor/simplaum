@@ -16,7 +16,7 @@ getIndochinaR = do
         addStylesheet (StaticR css_bootstrap_css)
         setTitle "Quarto Indochina"
         toWidgetHead $(cassiusFile "templates/Padrao.cassius")
-        toWidgetHead $(cassiusFile "templates/Quarto.cassius")
-        toWidget (navWidget "Home")
-        $(whamletFile "templates/Indochina.hamlet")
+        toWidgetHead $(cassiusFile "templates/quarto/Quarto.cassius")
+        toWidget navWidget
+        $(whamletFile "templates/quarto/Indochina.hamlet")
         toWidget footerWidget

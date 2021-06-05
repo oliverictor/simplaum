@@ -1,0 +1,31 @@
+<div #content>
+    <div #header-content-indice>
+        <h1 class="negrito">Quarto Selvagem
+        <p class="texto1">Para você que sempre sonhou em ser o Tarzan!
+
+    <div .img-quarto>
+        <p>Ambiente Selvagem
+        <img src="/static/img/selvagem/selvagem1.jpg">
+
+    <div .img-quarto>
+        <p>Privacidade e Tranquilidade
+        <img src="/static/img/selvagem/selvagem2.jpg">
+
+    <div .img-quarto>
+        <p>Banheiro à ciel ouvert
+        <img src="/static/img/selvagem/selvagem3.jpg">
+
+    <div .img-quarto>
+        <p>Pratique Arco e Fecha!
+        <img src="/static/img/selvagem/selvagem4.jpg">
+
+    <div #header-content-quartos>
+        <h1 class="negrito2">Inclusos
+        <ul class="texto1">
+            <li>Lona.
+            <li>Uma flecha.
+            <li>Perdeneira.
+            <li>Ampla area de recreação.
+            <li>Animais selvagem próximos, não faça barulho, sério.
+            <li>Frutas Silvestres, por ai...
+            <li>Treinamento com Arco e Flecha com o sósia do Rambo!!!

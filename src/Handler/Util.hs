@@ -9,13 +9,13 @@ module Handler.Util where
 import Import
 
 formWidget :: Text -> Widget -> Route App -> Maybe Html -> Widget
-formWidget title widget route errorMsg = $(whamletFile "templates/Form.hamlet")
+formWidget title widget route errorMsg = $(whamletFile "templates/components/Form.hamlet")
 
-navWidget :: Text -> Widget
-navWidget active = do
+navWidget :: Widget
+navWidget = do
     usuario <- lookupSession "_ID"
-    $(whamletFile "templates/Nav.hamlet")
+    $(whamletFile "templates/components/Nav.hamlet")
 
 footerWidget :: Widget
 footerWidget = do
-    $(whamletFile "templates/Footer.hamlet")
+    $(whamletFile "templates/components/Footer.hamlet")

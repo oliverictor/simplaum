@@ -1,5 +1,7 @@
-<div #header-content-indice>
+<div #content>
     <h1 class="negrito">Clientes
+
+    <a .btn .btn-success .btn-novo href=@{ClienteR}>+ Novo
     <div .table-responsive .table-back>
         <table class="table table-dark table-striped table-sm">
             <thead>

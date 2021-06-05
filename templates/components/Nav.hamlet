@@ -1,11 +1,13 @@
 <div #menu>
     <a href=@{HomeR}>Home
     <a href=@{QuartosR}>Quartos
-    <a href=@{CadastroR}>Cadastro
-    <a href=@{SobreR}>Sobre
 
     $maybe email <- usuario
+        <a href=@{ClientesPageR}>Clientes
+        <a href=@{SobreR}>Sobre
         <form method=post action=@{SairR}>
             <input .btn-danger type="submit" value="Sair">
     $nothing
+        <a href=@{SobreR}>Sobre
         <a href=@{AuthR}>Login
+

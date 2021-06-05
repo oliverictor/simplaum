@@ -7,6 +7,13 @@ body
   height: 100vh
   padding-top: 10vh
 
+#content
+  padding-bottom: 20vh
+  max-width: 80%
+  margin: 10px auto
+  text-align: center
+  justify-content: space-around
+
 img
   margin-top: 3px
   margin-bottom: 1px
@@ -47,12 +54,6 @@ img
   background: #FFF
   color: #000
 
-#header-content-indice
-  max-width: 80%
-  margin: 10px auto
-  text-align: center
-  justify-content: space-around
-
 #header-content-quartos
   max-width: 400px
   margin: 150px auto
@@ -63,14 +64,16 @@ img
   margin: 150px auto
   text-align: center
 
+h1,h2,h3
+  font-family: times
+  color: #FFF
+
 h1.negrito
   margin-top: 10vh
   margin-bottom: 10px
   font-size: 96px
-  color: #FFF
   -webkit-text-stroke-width: 0.5px
   -webkit-text-stroke-color: #000
-  font-family: times
 
 h1.negrito2
   margin-bottom: 20px
@@ -140,6 +143,10 @@ p.right-text
   background-color: transparent
   text-decoration: underline
 
+div .table-responsive
+  margin-top: 10px;
+  margin-bottom: 40px;
+
 .table-back
   background-color: white
   border-radius: 5px
@@ -150,3 +157,6 @@ p.right-text
 
 .td-controls *
   margin-right: 5px;
+
+.btn-novo
+  margin-bottom: 10px;

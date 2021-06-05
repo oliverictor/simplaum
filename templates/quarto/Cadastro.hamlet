@@ -1,0 +1,10 @@
+<div #content>
+    <h1 class="negrito">Novo Quarto
+
+    $maybe mensa <- msg
+        <div>
+            ^{mensa}
+
+    <form .cadastro method=post action=@{QuartoR}>
+        ^{widget}
+        <input type="submit" class="btn btn-primary mt-3" value="Cadastrar">

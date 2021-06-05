@@ -9,3 +9,14 @@ Usuario
     senha   Text
     UniqueEmail2 email
     deriving Show
+
+Quarto
+    nome Text
+    desc Text
+    preco Double
+
+Reserva
+    clienteId ClienteId
+    quartoId QuartoId
+    data Day
+    dias Int
