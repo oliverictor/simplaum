@@ -16,7 +16,6 @@
 /cliente/editar/#ClienteId EditarCliR GET POST
 /cliente/#ClienteId ApagarCliR POST
 
-/reservasteste ReservasTesteR GET
 /reservar/#ClienteId ReservaR GET POST
 /reservas/#ClienteId ReservasR GET
 

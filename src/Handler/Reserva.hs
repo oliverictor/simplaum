@@ -65,15 +65,3 @@ getReservasR cid = do
         toWidget navWidget
         $(whamletFile "templates/reserva/Reservas.hamlet")
         toWidget footerWidget
-
-getReservasTesteR :: Handler Html
-getReservasTesteR = do
-    reservas <- runDB $ selectList [] [Asc QuartoNome]
-    defaultLayout $ do
-        addStylesheet (StaticR css_bootstrap_css)
-        toWidgetHead $(cassiusFile "templates/Padrao.cassius")
-        toWidgetHead $(cassiusFile "templates/quarto/Quartos.cassius")
-        [whamlet|
-            $forall Entity rid reserva <- reservas
-                <div .quarto>
-        |]
