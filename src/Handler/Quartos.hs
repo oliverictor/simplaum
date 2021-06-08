@@ -15,7 +15,7 @@ formQuarto = renderDivs $ Quarto
     <$> areq textField "Nome: "  Nothing
     <*> areq textField "Desc:  "  Nothing
     <*> areq doubleField  "Preço: " Nothing
-    
+
 getQuartoR :: Handler Html
 getQuartoR = do
     (widget,_) <- generateFormPost formQuarto
@@ -38,14 +38,14 @@ postQuartoR = do
                 <div>
                     #{quartoNome quarto} inserido com sucesso!
             |]
-            redirect QuartoR
+            redirect QuartosR
         _ -> redirect QuartosR
 
 getQuartosR :: Handler Html
 getQuartosR = do
-    -- quartos <- runDB $ selectList [] [Asc QuartoNome]
+    quartos <- runDB $ selectList [] [Asc QuartoNome]
     usuario <- lookupSession "_ID"
-    defaultLayout $ do 
+    defaultLayout $ do
         addStylesheet (StaticR css_bootstrap_css)
         setTitle "Quartos" 
         toWidgetHead $(cassiusFile "templates/Padrao.cassius")

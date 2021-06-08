@@ -5,6 +5,6 @@
         <div>
             ^{mensa}
 
-    <form .cadastro method=post action=@{QuartoR}>
-        ^{widget}
-        <input type="submit" class="btn btn-primary mt-3" value="Cadastrar">
+    $# <form .cadastro method=post action=@{QuartoR}>
+    $#     ^{widget}
+    $#     <input type="submit" class="btn btn-primary mt-3" value="Cadastrar">

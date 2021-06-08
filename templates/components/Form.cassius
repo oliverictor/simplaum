@@ -9,7 +9,7 @@ form.cadastro
     display: flex
     margin: 5px
 
-.required input
+.required input,select
     display: block;
     height: 45px;
     padding: 10px 15px;

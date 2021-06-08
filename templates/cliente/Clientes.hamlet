@@ -21,6 +21,7 @@
                             #{clienteIdade cliente}
                         <td>
                             <div .td-controls>
+                                <a .btn .btn-link href=@{ReservasR cid}>Reservas
                                 <a .btn .btn-success href=@{EditarCliR cid}>Editar
                                 <form method=post action=@{ApagarCliR cid}>
                                     <input .btn .btn-danger type="submit" value="X">

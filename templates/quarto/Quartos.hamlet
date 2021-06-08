@@ -2,8 +2,8 @@
     <h1 class="negrito">Quartos
     <p class="texto1">Nossos quartos são repletos de autenticidade e exoterismo.
 
-    $maybe _ <- usuario
-        <a .btn .btn-success .btn-novo-quarto href=@{QuartoR}>+ Novo
+    $# $maybe _ <- usuario
+    $#     <a .btn .btn-success .btn-novo-quarto href=@{QuartoR}>+ Novo
 
     <div .quarto>
         <div .quarto-info>
@@ -29,14 +29,14 @@
             $#         <form method=post action=@{ApagarQuartoR -1}>
             $#             <input .btn .btn-danger type="submit" value="X">
 
-    $# <div .quarto>
-    $#     $forall Entity cid quarto <- quartos
-    $#         <div .quarto-info>
-    $#             <h2>#{quartoNome quarto}
-    $#             <span .quarto-preco>R$ #{quartoPreco quarto}
-    $#             <p>#{quartoDesc quarto}
-    $#             $# $maybe email <- usuario
-    $#                 <div .quarto-controls>
-    $#                     $# <a .btn .btn-success href=@{EditarQuartoR qid}>Editar
-    $#                     <form method=post action=@{ApagarQuartoR cid}>
-    $#                         <input .btn .btn-danger type="submit" value="X">
+    $forall Entity qid quarto <- quartos
+        <div .quarto>
+            <div .quarto-info>
+                <h2>#{quartoNome quarto}
+                <span .quarto-preco>R$ #{quartoPreco quarto}
+                <p>#{quartoDesc quarto}
+                $# $maybe email <- usuario
+                $#     <div .quarto-controls>
+                        $# <a .btn .btn-success href=@{EditarQuartoR qid}>Editar
+                        $# <form method=post action=@{ApagarQuartoR qid}>
+                        $#     <input .btn .btn-danger type="submit" value="X">

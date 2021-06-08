@@ -33,7 +33,7 @@ getReservaR cid = do
         toWidgetHead $(cassiusFile "templates/Padrao.cassius")
         toWidgetHead $(cassiusFile "templates/components/Form.cassius")
         toWidget navWidget
-        $(whamletFile "templates/cliente/Cadastro.hamlet")
+        $(whamletFile "templates/reserva/Reservar.hamlet")
         toWidget footerWidget
 
 postReservaR :: ClienteId -> Handler Html
@@ -47,20 +47,33 @@ postReservaR cid = do
                     Reserva feita com sucesso!
             |]
             redirect (ReservasR cid)
-        _ -> redirect HomeR
+        _ -> redirect (ReservasR cid)
 
 getReservasR :: ClienteId -> Handler Html
 getReservasR cid = do
+    msg <- getMessage
     let sql = "SELECT ??,??,?? FROM quarto \
+        \ INNER JOIN reserva ON reserva.quarto_id = quarto.id \
+        \ INNER JOIN cliente ON reserva.cliente_id = cliente.id \
         \ WHERE cliente.id = ?"
     cliente <- runDB $ get404 cid
     tudo <- runDB $ rawSql sql [toPersistValue cid] :: Handler [(Entity Quarto, Entity Reserva, Entity Cliente)]
     defaultLayout $ do
+        addStylesheet (StaticR css_bootstrap_css)
+        toWidgetHead $(cassiusFile "templates/Padrao.cassius")
+        toWidgetHead $(cassiusFile "templates/components/Form.cassius")
+        toWidget navWidget
+        $(whamletFile "templates/reserva/Reservas.hamlet")
+        toWidget footerWidget
+
+getReservasTesteR :: Handler Html
+getReservasTesteR = do
+    reservas <- runDB $ selectList [] [Asc QuartoNome]
+    defaultLayout $ do
+        addStylesheet (StaticR css_bootstrap_css)
+        toWidgetHead $(cassiusFile "templates/Padrao.cassius")
+        toWidgetHead $(cassiusFile "templates/quarto/Quartos.cassius")
         [whamlet|
-            <h1>
-                Reservas de #{clienteNome cliente}
-            <ul>
-                $forall (Entity _ quarto, Entity _ reserva, Entity _ _) <- tudo
-                    <li>
-                        #{quartoNome quarto}: #{quartoPreco quarto} - #{show $ reservaData reserva}
+            $forall Entity rid reserva <- reservas
+                <div .quarto>
         |]

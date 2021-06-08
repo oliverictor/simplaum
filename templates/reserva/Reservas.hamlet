@@ -1,0 +1,13 @@
+<div #content>
+    <h2 .negrito>
+        Reservas de #{clienteNome cliente}
+
+    $maybe mensa <- msg
+        <div>
+            ^{mensa}
+
+    <a .btn .btn-success .btn-novo href=@{ReservaR cid}>Reservar novo quarto
+    <ul>
+        $forall (Entity _ quarto, Entity _ reserva, Entity _ _) <- tudo
+            <li>
+                #{quartoNome quarto}: #{quartoPreco quarto} - #{show $ reservaData reserva}

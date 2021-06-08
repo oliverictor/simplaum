@@ -81,6 +81,7 @@ getEditarCliR cid = do
     defaultLayout $ do
         addStylesheet (StaticR css_bootstrap_css)
         toWidgetHead $(cassiusFile "templates/Padrao.cassius")
+        toWidgetHead $(cassiusFile "templates/components/Form.cassius")
         toWidget navWidget
         (formWidget "Editar" widget (EditarCliR cid) msg)
         toWidget footerWidget

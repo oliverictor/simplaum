@@ -18,5 +18,5 @@ getHomeR = do
         addStylesheet (StaticR css_bootstrap_css)
         toWidgetHead $(cassiusFile "templates/Padrao.cassius")
         toWidget navWidget
-        $(whamletFile "templates/Home.hamlet")
+        $(whamletFile "templates/Inicio.hamlet")
         toWidget footerWidget

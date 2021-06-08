@@ -1,0 +1,9 @@
+<div #content>
+    <h1 .negrito>Hotel Simplaum
+    <p .texto1>Conheça o Hotel Simplaum, conforto, charme e um toque de aventura. 
+
+    $maybe _ <- usuario
+        <p>Bem vindo(a)!
+    $nothing
+        <a .btn .btn-link href=@{AuthR}>Login
+        <a .btn .btn-link href=@{UsuarioR}>Registro
